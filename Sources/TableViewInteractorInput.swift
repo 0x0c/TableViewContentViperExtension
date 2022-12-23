@@ -34,7 +34,7 @@ public enum TableViewSectionBuilder {
         return component
     }
 
-    public static func buildExpression(_ element: any Sectionable?) -> [any Sectionable] {
+    public static func buildExpression(_ element: (any Sectionable)?) -> [any Sectionable] {
         return element.map { [$0] } ?? []
     }
 
