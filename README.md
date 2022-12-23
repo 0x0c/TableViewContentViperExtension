@@ -1,4 +1,4 @@
-# CompositionalLayoutViewControllerViperExtension
+TableViewContentViperExtension
 
 ## Requirements
 
@@ -10,7 +10,7 @@ CompositionalLayoutViewControllerViperExtension is available through [CocoaPods]
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CompositionalLayoutViewControllerViperExtension'
+pod 'TableViewContentViperExtension'
 ```
 
 ## Author
