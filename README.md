@@ -19,4 +19,4 @@ Akira, akira.matsuda@me.com
 
 ## License
 
-CompositionalLayoutViewControllerViperExtension is available under the MIT license. See the LICENSE file for more info.
+TableViewContentViperExtension is available under the MIT license. See the LICENSE file for more info.
