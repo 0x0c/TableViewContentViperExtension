@@ -9,7 +9,7 @@ import TableViewContent
 import UIKit
 
 public protocol TableViewPresenterInput: AnyObject {
-    var sections: [Section] { get }
+    var sections: [any Sectionable] { get }
 
     func section(for sectionIndex: Int) -> Section
     @MainActor

@@ -9,16 +9,16 @@ import TableViewContent
 import Foundation
 
 public protocol TableViewFetchableInteractorInput: AnyObject {
-    func reload() -> [Section]
-    func fetch(force: Bool) -> [Section]
+    func reload() -> [any Sectionable]
+    func fetch(force: Bool) -> [any Sectionable]
 }
 
 public extension TableViewFetchableInteractorInput {
-    func reload() -> [Section] {
+    func reload() -> [any Sectionable] {
         return fetch(force: true)
     }
 
-    func fetch(force: Bool = false) -> [Section] {
+    func fetch(force: Bool = false) -> [any Sectionable] {
         return fetch(force: force)
     }
 }

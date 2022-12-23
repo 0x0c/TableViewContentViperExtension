@@ -10,5 +10,5 @@ import UIKit
 
 public protocol TableViewInput: AnyObject {
     @MainActor
-    func update(sections: [Section])
+    func update(sections: [any Sectionable])
 }
