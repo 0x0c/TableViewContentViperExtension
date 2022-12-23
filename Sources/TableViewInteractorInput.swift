@@ -60,7 +60,7 @@ public protocol TableViewInteractorInput: AnyObject {
 
     func store(_ sections: [any Sectionable])
     func store(@TableViewSectionBuilder _ sections: () -> [any Sectionable])
-    func section(for sectionIndex: Int) -> Section
+    func section(for sectionIndex: Int) -> Sectionable
 }
 
 public extension TableViewInteractorInput {
@@ -72,7 +72,7 @@ public extension TableViewInteractorInput {
         self.sections = sections()
     }
 
-    func section(for sectionIndex: Int) -> Section {
+    func section(for sectionIndex: Int) -> Sectionable {
         return sections[sectionIndex]
     }
 }
