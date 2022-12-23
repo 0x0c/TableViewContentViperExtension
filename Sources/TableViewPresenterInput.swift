@@ -11,7 +11,7 @@ import UIKit
 public protocol TableViewPresenterInput: AnyObject {
     var sections: [any Sectionable] { get }
 
-    func section(for sectionIndex: Int) -> Sectionable
+    func section(for sectionIndex: Int) -> any Sectionable
     @MainActor
     func didSelectRow(at indexPath: IndexPath)
 }

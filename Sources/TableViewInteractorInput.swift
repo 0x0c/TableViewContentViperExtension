@@ -14,11 +14,11 @@ public enum TableViewSectionBuilder {
         []
     }
 
-    public static func buildBlock<C: Collection>(_ contents: C...) -> [any Sectionable] where C.Element == Section {
+    public static func buildBlock<C: Collection>(_ contents: C...) -> [any Sectionable] where C.Element == any Sectionable {
         return contents.flatMap { $0 }
     }
 
-    public static func buildBlock(_ contents: Section...) -> [any Sectionable] {
+    public static func buildBlock(_ contents: any Sectionable...) -> [any Sectionable] {
         return contents
     }
 
@@ -34,15 +34,15 @@ public enum TableViewSectionBuilder {
         return component
     }
 
-    public static func buildExpression(_ element: Section?) -> [any Sectionable] {
+    public static func buildExpression(_ element: any Sectionable?) -> [any Sectionable] {
         return element.map { [$0] } ?? []
     }
 
-    public static func buildExpression(_ element: Section) -> [any Sectionable] {
+    public static func buildExpression(_ element: any Sectionable) -> [any Sectionable] {
         return [element]
     }
 
-    public static func buildExpression<C: Collection>(_ elements: C) -> [any Sectionable] where C.Element == Section {
+    public static func buildExpression<C: Collection>(_ elements: C) -> [any Sectionable] where C.Element == any Sectionable {
         Array(elements)
     }
 
@@ -60,7 +60,7 @@ public protocol TableViewInteractorInput: AnyObject {
 
     func store(_ sections: [any Sectionable])
     func store(@TableViewSectionBuilder _ sections: () -> [any Sectionable])
-    func section(for sectionIndex: Int) -> Sectionable
+    func section(for sectionIndex: Int) -> any Sectionable
 }
 
 public extension TableViewInteractorInput {
@@ -72,7 +72,7 @@ public extension TableViewInteractorInput {
         self.sections = sections()
     }
 
-    func section(for sectionIndex: Int) -> Sectionable {
+    func section(for sectionIndex: Int) -> any Sectionable {
         return sections[sectionIndex]
     }
 }
